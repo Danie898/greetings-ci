@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/Danie898/greetings-ci/compare/v0.4.0...v0.5.0) (2022-08-24)
+
+
+### Features
+
+* add testing to pipeline ([b8fda95](https://github.com/Danie898/greetings-ci/commit/b8fda958e58d8a1a0d25f5f4d18558d1fbf40967))
+
+
+
 # [0.4.0](https://github.com/Danie898/greetings-ci/compare/v0.1.1...v0.4.0) (2022-08-24)
 
 
