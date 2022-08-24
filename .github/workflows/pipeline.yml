@@ -20,7 +20,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
+    outputs:
+      artifact-tag: ${{ steps.changelog.outputs.version }}
     steps:
     - uses: actions/checkout@v3
     - name: Conventional Changelog Action
@@ -44,7 +46,9 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
        name: greetings-jar
-       path: build/libs
+       path: 
+        build/libs
+        test-script1.sh
        
   test-run:
       runs-on: ubuntu-latest
@@ -55,3 +59,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: greetings-jar
+          
+      - name: Execute test
+        shell: bash
+        run:
+          chmod +x ./test-script1.sh
+          ./test-script1.sh ${{ needs.build.outputs.artifact-tag }} ${{ github.event.inputs.myValues }}
