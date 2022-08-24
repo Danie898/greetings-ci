@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/Danie898/greetings-ci/compare/v0.1.1...v0.2.0) (2022-08-24)
+
+
+### Features
+
+* upload artifact ([12e84c8](https://github.com/Danie898/greetings-ci/commit/12e84c827ebb55425ad2b4ea88bdfc6d050fbbb4))
+
+
+
 ## [0.1.1](https://github.com/Danie898/greetings-ci/compare/v0.1.0...v0.1.1) (2022-08-10)
 
 
