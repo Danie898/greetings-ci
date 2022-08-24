@@ -9,9 +9,9 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ "main", "changelog" ]
+    branches: [ "artifact" ]
   pull_request:
-    branches: [ "main", "changelog" ]
+    branches: [ "artifact" ]
 
 permissions:
   contents: write
@@ -24,6 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Conventional Changelog Action
+      id: changelog
       uses: TriPSs/conventional-changelog-action@v3.14.0
 
     - name: Set up JDK 11
@@ -36,14 +37,12 @@ jobs:
       with:
         arguments: build
         
-  test-run:
-   runs-on: ubuntu-latest
-   needs: build
-   
-   steps:
-   - name: Download candidate artifacts
-     uses: actions/download-artifact@v3
-     with:
+    - name: Tag artifact
+      run: mv build/libs/greetings-ci.jar build/libs/greetings-ci-${{steps.changelog.outputs.version}}.jar
+    
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
        name: greetings-jar
-  
+       path: build/libs
   
