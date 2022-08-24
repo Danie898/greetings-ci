@@ -66,6 +66,8 @@ jobs:
           
       - name: Execute test
         shell: bash
+        env:
+          ARGS: ${{github.event.inputs.myValues}}
         run:
           chmod +x ./test-script1.sh
           ./test-script1.sh ${{ needs.build.outputs.artifact-tag }} ${{ github.event.inputs.myValues }}
