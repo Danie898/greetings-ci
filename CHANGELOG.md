@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/Danie898/greetings-ci/compare/v0.2.0...v0.3.0) (2022-08-24)
+
+
+### Features
+
+* version ([1ce8335](https://github.com/Danie898/greetings-ci/commit/1ce8335d6e884b7a3c36551c827aedaa8233d393))
+
+
+
 # [0.2.0](https://github.com/Danie898/greetings-ci/compare/v0.1.1...v0.2.0) (2022-08-24)
 
 
